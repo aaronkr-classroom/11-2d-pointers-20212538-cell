@@ -8,11 +8,14 @@ int main(void) {
 	p_name = (char*)malloc(20);
 
 	if (p_name != NULL) { //메모리 할당에 성공!
-		printf("Enter your name: >>>");
-		gets(p_name);
+		while (1) {
+			printf("Enter your name: >>>");
+			gets(p_name);
 
-		printf("Hi-- %s~\n", p_name);
+			if (p_name == "Quit" || p_name == "Q") break;
 
+			printf("Hi-- %s~\n", p_name);
+		}
 		// 포인터 변수 p_name애 동적 할당된 메모리를 해제!!!
 		free(p_name);
 	}
